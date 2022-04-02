@@ -236,14 +236,23 @@
 
     <script>
         //01. HTML/CSS 구성하기
-        //02. 클릭한 카드 뒤집기 효과 주기
+        //02. 클릭한 카드 뒤집기
+        //03. 두개 카드만 뒤집기 확인하기
 
         const cards = document.querySelectorAll(".card");
+
+        let oneCard, twoCard;
 
         function flipCard(e){
             let clickedCard = e.target;
             clickedCard.classList.add("flip");
-            console.log(clickedCard);
+            
+            if(!oneCard){
+                return oneCard = clickedCard;
+            }
+            twoCard = clickedCard;
+
+            console.log(oneCard, twoCard);
         }
 
         cards.forEach(card => {
